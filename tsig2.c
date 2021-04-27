@@ -5,8 +5,8 @@
 #include <signal.h>
 
 #define WITH_SIGNALS 0
+#define NUM_CHILD 2
 
-const unsigned int NUM_CHILD = 2;
 pid_t pids[NUM_CHILD];
 int currPid = 0;
 const unsigned int noChildProcessesStatus = -1;
