@@ -1,27 +1,27 @@
  PROCESSES AND SIGNALS
 
 
-[] 1. Write a program in C with the name tsig, which tests synchronization
+1. Write a program in C with the name tsig, which tests synchronization
   mechanisms and signals. Use the following system functions: fork(), wait(),
   signal() or sigaction() and kill(). The program should run the algorithm 
   from the section 2 with additional modifications from the section 3.
 
 
-[] 2. Processes' algorithms without signal handlers
+2. Processes' algorithms without signal handlers
 
   The main (parent) process algorithm
 
-  1. Create NUM_CHILD child processes, where NUM_CHILD is defined in the
+  a. Create NUM_CHILD child processes, where NUM_CHILD is defined in the
   program, use the fork() function. Insert one second delays between
   consecutive fork() calls.
 
-  2. Check whether each of the child processes has been correctly created. If
+  b. Check whether each of the child processes has been correctly created. If
   not, print an appropriate message, send to all already created child
   processes SIGTERM signal and finish with the exit code 1.
 
-  3. Print a message about creation of all child processes.
+  c. Print a message about creation of all child processes.
 
-  4. Call in a loop the wait() function, until receiving from the system
+  d. Call in a loop the wait() function, until receiving from the system
   information that there are no more processes to be synchronized with the
   parent one. Print a message that there are no more child processes. In this
   loop do count child processes terminations and, at the very end of the
@@ -41,7 +41,7 @@
   correctly, continue with the tasks from the next section.
 
 
-[] 3. Some modifications related to signal handlers
+3. Some modifications related to signal handlers
 
   In the parent process
 
@@ -74,7 +74,7 @@
   message of the termination of this process.
 
 
-[] 4. Additional remarks
+4. Additional remarks
 
   a. two versions of the program are expected to be implemented, without and
   with signals (without changes from the section 3 and with them). The code
@@ -88,10 +88,6 @@
   parent[123]: sending SIGTERM signal 
 
   child[125]:  received SIGTERM signal, terminating
-
-
-[] 5. Hints
-
   a. look at the following manual pages: fork(), wait(), signal(),
   sigaction(), kill(), getpid(), getppid(), sleep()
 
